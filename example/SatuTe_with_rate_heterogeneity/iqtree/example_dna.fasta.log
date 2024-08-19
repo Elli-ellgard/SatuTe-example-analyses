@@ -1,0 +1,224 @@
+IQ-TREE multicore version 2.2.2.3 COVID-edition for Linux 64-bit built Mar 13 2023
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan.
+
+Host:    elgert-lenovo (AVX512, FMA3, 31 GB RAM)
+Command: iqtree2 -s /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta -t /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/true_tree.tree -m JC+G4 -wspr
+Seed:    943810 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Aug 19 11:40:45 2024
+Kernel:  AVX+FMA - 1 threads (16 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 16 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta ... Fasta format detected
+Reading fasta file: done in 0.000134414 secs using 98.95% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.000378166 secs using 99.96% CPU
+Alignment has 16 sequences with 1000 columns, 894 distinct patterns
+932 parsimony-informative, 49 singleton sites, 19 constant sites
+    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 1.9299e-05 secs using 98.45% CPU
+   1  A1    0.00%    passed     89.19%
+   2  A2    0.00%    passed     92.23%
+   3  A3    0.00%    passed     75.66%
+   4  A4    0.00%    passed     69.41%
+   5  A5    0.00%    passed     36.68%
+   6  A6    0.00%    passed     88.44%
+   7  A7    0.00%    passed     93.76%
+   8  A8    0.00%    passed     77.17%
+   9  B1    0.00%    passed     81.02%
+  10  B2    0.00%    passed     96.64%
+  11  B3    0.00%    passed     18.02%
+  12  B4    0.00%    passed     46.61%
+  13  B5    0.00%    passed     97.15%
+  14  B6    0.00%    passed     64.55%
+  15  B7    0.00%    passed     73.40%
+  16  B8    0.00%    passed     88.28%
+****  TOTAL    0.00%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 3.0221e-05 secs using 99.27% CPU
+Reading input tree file /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/true_tree.tree ...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -12289.241
+2. Current log-likelihood: -12014.565
+3. Current log-likelihood: -12010.877
+Optimal log-likelihood: -12010.844
+Rate parameters:  A-C: 1.00000  A-G: 1.00000  A-T: 1.00000  C-G: 1.00000  C-T: 1.00000  G-T: 1.00000
+Base frequencies:  A: 0.250  C: 0.250  G: 0.250  T: 0.250
+Gamma shape alpha: 83.755
+Parameters optimization took 3 rounds (0.019 sec)
+Wrote distance file to... 
+
+Do NNI search on 1 best initial trees
+Optimizing NNI: done in 0.0181143 secs using 99.69% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -12009.851
+Finish initializing candidate tree set (2)
+Current best tree score: -12009.851 / CPU time: 0.025
+Number of iterations: 1
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Optimizing NNI: done in 0.0496909 secs using 99.88% CPU
+Optimizing NNI: done in 0.014052 secs using 99.99% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -12009.837
+Optimizing NNI: done in 0.0673338 secs using 100% CPU
+Optimizing NNI: done in 0.0261918 secs using 99.85% CPU
+Optimizing NNI: done in 0.0378842 secs using 100% CPU
+Optimizing NNI: done in 0.017538 secs using 99.99% CPU
+Optimizing NNI: done in 0.0347957 secs using 99.87% CPU
+Optimizing NNI: done in 0.0212183 secs using 99.99% CPU
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -12009.557
+Optimizing NNI: done in 0.0407721 secs using 100% CPU
+Iteration 10 / LogL: -12009.559 / Time: 0h:0m:0s
+Optimizing NNI: done in 0.0260589 secs using 100% CPU
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -12009.537
+Optimizing NNI: done in 0.0568738 secs using 100% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 12: -12009.244
+Optimizing NNI: done in 0.0381828 secs using 99.85% CPU
+Optimizing NNI: done in 0.0230186 secs using 100% CPU
+Optimizing NNI: done in 0.0189604 secs using 99.99% CPU
+Optimizing NNI: done in 0.0496563 secs using 100% CPU
+Optimizing NNI: done in 0.0316324 secs using 99.86% CPU
+Optimizing NNI: done in 0.0245061 secs using 99.99% CPU
+Optimizing NNI: done in 0.0306304 secs using 89.23% CPU
+Optimizing NNI: done in 0.0556248 secs using 99.47% CPU
+Iteration 20 / LogL: -12009.984 / Time: 0h:0m:0s
+Optimizing NNI: done in 0.0273438 secs using 100% CPU
+Optimizing NNI: done in 0.0248515 secs using 99.97% CPU
+Optimizing NNI: done in 0.0466864 secs using 100% CPU
+Optimizing NNI: done in 0.0351222 secs using 100% CPU
+Optimizing NNI: done in 0.0403845 secs using 100% CPU
+Optimizing NNI: done in 0.0207756 secs using 100% CPU
+Optimizing NNI: done in 0.0346451 secs using 88.45% CPU
+Optimizing NNI: done in 0.0486709 secs using 99.97% CPU
+Optimizing NNI: done in 0.024344 secs using 100% CPU
+Optimizing NNI: done in 0.0623231 secs using 100% CPU
+Iteration 30 / LogL: -12011.283 / Time: 0h:0m:1s (0h:0m:3s left)
+Optimizing NNI: done in 0.0273271 secs using 99.98% CPU
+Optimizing NNI: done in 0.0390851 secs using 99.99% CPU
+Optimizing NNI: done in 0.0237384 secs using 99.99% CPU
+Optimizing NNI: done in 0.0233981 secs using 99.99% CPU
+Optimizing NNI: done in 0.0319574 secs using 100% CPU
+Optimizing NNI: done in 0.0340606 secs using 100% CPU
+Optimizing NNI: done in 0.0402324 secs using 100% CPU
+Optimizing NNI: done in 0.0223568 secs using 100% CPU
+Optimizing NNI: done in 0.0269634 secs using 100% CPU
+Optimizing NNI: done in 0.0249522 secs using 100% CPU
+Iteration 40 / LogL: -12010.034 / Time: 0h:0m:1s (0h:0m:2s left)
+Optimizing NNI: done in 0.0227113 secs using 100% CPU
+Optimizing NNI: done in 0.019386 secs using 99.99% CPU
+Optimizing NNI: done in 0.0345059 secs using 100% CPU
+Optimizing NNI: done in 0.0275519 secs using 100% CPU
+Optimizing NNI: done in 0.0303346 secs using 100% CPU
+Optimizing NNI: done in 0.0453061 secs using 100% CPU
+Optimizing NNI: done in 0.01837 secs using 78.25% CPU
+Optimizing NNI: done in 0.0384392 secs using 100% CPU
+Optimizing NNI: done in 0.027026 secs using 100% CPU
+Optimizing NNI: done in 0.0344441 secs using 88.4% CPU
+Iteration 50 / LogL: -12009.566 / Time: 0h:0m:1s (0h:0m:2s left)
+Optimizing NNI: done in 0.0303479 secs using 86.79% CPU
+Optimizing NNI: done in 0.027282 secs using 100% CPU
+Optimizing NNI: done in 0.0239993 secs using 100% CPU
+Optimizing NNI: done in 0.0243114 secs using 100% CPU
+Optimizing NNI: done in 0.0293114 secs using 100% CPU
+Optimizing NNI: done in 0.0265007 secs using 100% CPU
+Optimizing NNI: done in 0.0511434 secs using 100% CPU
+Optimizing NNI: done in 0.022412 secs using 100% CPU
+Optimizing NNI: done in 0.0232586 secs using 100% CPU
+Optimizing NNI: done in 0.0444061 secs using 100% CPU
+Iteration 60 / LogL: -12009.626 / Time: 0h:0m:2s (0h:0m:1s left)
+Optimizing NNI: done in 0.0165065 secs using 100% CPU
+Optimizing NNI: done in 0.0215862 secs using 99.99% CPU
+Optimizing NNI: done in 0.0466121 secs using 99.98% CPU
+Optimizing NNI: done in 0.0225036 secs using 100% CPU
+Optimizing NNI: done in 0.0229938 secs using 100% CPU
+Optimizing NNI: done in 0.0158777 secs using 100% CPU
+Optimizing NNI: done in 0.0239392 secs using 100% CPU
+Optimizing NNI: done in 0.0253925 secs using 100% CPU
+Optimizing NNI: done in 0.0282419 secs using 99.96% CPU
+Optimizing NNI: done in 0.0412986 secs using 100% CPU
+Iteration 70 / LogL: -12009.835 / Time: 0h:0m:2s (0h:0m:1s left)
+Optimizing NNI: done in 0.0236832 secs using 99.89% CPU
+Optimizing NNI: done in 0.0282822 secs using 100% CPU
+Optimizing NNI: done in 0.0347041 secs using 100% CPU
+Optimizing NNI: done in 0.0191493 secs using 79.26% CPU
+Optimizing NNI: done in 0.0503892 secs using 99.94% CPU
+Optimizing NNI: done in 0.0378615 secs using 99.99% CPU
+Optimizing NNI: done in 0.0486526 secs using 100% CPU
+Optimizing NNI: done in 0.0317532 secs using 100% CPU
+Optimizing NNI: done in 0.0236576 secs using 99.97% CPU
+Optimizing NNI: done in 0.0213359 secs using 100% CPU
+Iteration 80 / LogL: -12010.309 / Time: 0h:0m:2s (0h:0m:1s left)
+Optimizing NNI: done in 0.0322378 secs using 100% CPU
+Optimizing NNI: done in 0.0291945 secs using 99.96% CPU
+Optimizing NNI: done in 0.0194076 secs using 100% CPU
+Optimizing NNI: done in 0.046846 secs using 100% CPU
+Optimizing NNI: done in 0.0289253 secs using 86.27% CPU
+Optimizing NNI: done in 0.024421 secs using 99.91% CPU
+Optimizing NNI: done in 0.036366 secs using 100% CPU
+Optimizing NNI: done in 0.0222736 secs using 100% CPU
+Optimizing NNI: done in 0.024192 secs using 99.98% CPU
+Optimizing NNI: done in 0.0228067 secs using 100% CPU
+Iteration 90 / LogL: -12009.581 / Time: 0h:0m:2s (0h:0m:0s left)
+Optimizing NNI: done in 0.0245004 secs using 99.99% CPU
+Optimizing NNI: done in 0.0280922 secs using 100% CPU
+Optimizing NNI: done in 0.0320956 secs using 100% CPU
+Optimizing NNI: done in 0.0250501 secs using 100% CPU
+Optimizing NNI: done in 0.0416637 secs using 100% CPU
+Optimizing NNI: done in 0.0225371 secs using 99.99% CPU
+Optimizing NNI: done in 0.0354638 secs using 100% CPU
+Optimizing NNI: done in 0.0454277 secs using 99.96% CPU
+Optimizing NNI: done in 0.0340442 secs using 100% CPU
+Optimizing NNI: done in 0.0368002 secs using 100% CPU
+Iteration 100 / LogL: -12588.488 / Time: 0h:0m:3s (0h:0m:0s left)
+Optimizing NNI: done in 0.0305481 secs using 100% CPU
+Optimizing NNI: done in 0.023555 secs using 100% CPU
+Optimizing NNI: done in 0.0589371 secs using 93.21% CPU
+Optimizing NNI: done in 0.0220894 secs using 99.99% CPU
+Optimizing NNI: done in 0.0345907 secs using 100% CPU
+Optimizing NNI: done in 0.0268495 secs using 100% CPU
+Optimizing NNI: done in 0.0351798 secs using 100% CPU
+Optimizing NNI: done in 0.0201092 secs using 100% CPU
+Optimizing NNI: done in 0.063727 secs using 81.22% CPU
+Optimizing NNI: done in 0.0419454 secs using 99.93% CPU
+Iteration 110 / LogL: -12868.071 / Time: 0h:0m:3s (0h:0m:0s left)
+Optimizing NNI: done in 0.0274401 secs using 100% CPU
+Optimizing NNI: done in 0.0364457 secs using 99.98% CPU
+Optimizing NNI: done in 0.0445395 secs using 100% CPU
+TREE SEARCH COMPLETED AFTER 113 ITERATIONS / Time: 0h:0m:3s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -12009.244
+Optimal log-likelihood: -12009.237
+Rate parameters:  A-C: 1.00000  A-G: 1.00000  A-T: 1.00000  C-G: 1.00000  C-T: 1.00000  G-T: 1.00000
+Base frequencies:  A: 0.250  C: 0.250  G: 0.250  T: 0.250
+Gamma shape alpha: 320.275
+Parameters optimization took 1 rounds (0.005 sec)
+BEST SCORE FOUND : -12009.237
+Site probabilities per category printed to /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.siteprob
+Total tree length: 4.789
+
+Total number of iterations: 113
+CPU time used for tree search: 3.651 sec (0h:0m:3s)
+Wall-clock time used for tree search: 3.705 sec (0h:0m:3s)
+Total CPU time used: 3.681 sec (0h:0m:3s)
+Total wall-clock time used: 3.735 sec (0h:0m:3s)
+
+Analysis results written to: 
+  IQ-TREE report:                /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
+  Maximum-likelihood tree:       /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.treefile
+  Site probability per rate/mix: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.siteprob
+  Screen log file:               /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.log
+
+Date and Time: Mon Aug 19 11:40:49 2024

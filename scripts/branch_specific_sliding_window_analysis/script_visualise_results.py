@@ -112,10 +112,9 @@ if __name__ == "__main__":
     plot_coherence_distribution_per_branch(results_dir, edge_list=["(A1, Node1*)","(Node4*, Node2*)"], bins=20)
 
 
-    """"Visualise Sliding window analysis for different Branches"""
+    """" Visualise Sliding window analysis for different Branches"""
     
     csv_file = find_file_with_suffix_in_directory("sliding_window_size_36.csv", results_dir)
-
     plot_sliding_window_analysis_combined(csv_file, results_dir)
    
 

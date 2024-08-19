@@ -1,2 +1,5 @@
 example/results*
 example/script*
+
+# Ignore __pycache__ directories
+__pycache__/

@@ -28,6 +28,20 @@ def find_file_with_suffix(gene_name, suffix, source_folder):
     return None
 
 
+def find_files_with_suffix_in_directory(suffix, directory):
+    """
+    Finds all files with the specified suffix in the given directory.
+
+    Args:
+        suffix (str): The suffix to look for (e.g., "_size_36.csv").
+        directory (str): The directory to search in.
+
+    Returns:
+        list of str: List of file paths matching the suffix.
+    """
+    return [os.path.join(directory, f) for f in os.listdir(directory) if f.endswith(suffix)]
+
+
 def find_file_with_suffix_in_directory(suffix, source_folder):
     # Iterate over files in the source folder
     for filename in os.listdir(source_folder):

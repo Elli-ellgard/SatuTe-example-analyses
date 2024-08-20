@@ -18,6 +18,8 @@ def summarize_component_data(results_dir, output_dir, data_name=None):
 
     summarized_component_data = {}
 
+    print("Summarize coherence coefficient data:")
+    
     # List all subdirectories in the results_dir
     subdirs = [d for d in os.listdir(results_dir) if os.path.isdir(os.path.join(results_dir, d))]
 
@@ -51,6 +53,7 @@ def summarize_component_data(results_dir, output_dir, data_name=None):
         csv_file_path = os.path.join(output_dir, f"{data_name}_summarized_component_data.csv")
         all_components_data.to_csv(csv_file_path, index=False)
 
+    print("")
     return summarized_component_data
 
 

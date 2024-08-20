@@ -9,6 +9,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from utils.script_analyses_utils import (
+    find_files_with_suffix_in_directory,
     find_file_with_suffix_in_directory,
 )
 
@@ -54,23 +55,74 @@ def plot_coherence_distribution_per_branch(results_dir, start_site=None, end_sit
 
 
 
-def plot_sliding_window_analysis_combined(csv_file, results_dir, edge_list=None):
+# def plot_sliding_window_analysis_combined(csv_file, results_dir, edge_list=None):
+#     """
+#     Plots the sliding window analysis for each branch in the provided results file on the same plot and saves it in a PDF.
+
+#     Args:
+#         csv_file (str): Path to the CSV file containing the sliding window analysis data.
+#         results_dir (str): Directory where the output PDF will be saved.
+#         edge_list (list, optional): List of branches to include in the plot. If None, include all branches.
+#     """
+#     # Load the result DataFrame
+#     result_df = pd.read_csv(csv_file)
+
+#     # Filter by edge_list if provided
+#     if edge_list is not None:
+#         result_df = result_df[edge_list]
+#     else:
+#         edge_list = result_df.columns.tolist()
+
+#     output_pdf = os.path.join(results_dir, f"Sliding_window_analysis_combined_for_{len(edge_list)}_branches.pdf")
+
+#     # Create a new figure for the combined plot
+#     plt.figure(figsize=(10, 6))
+
+#     # Plot each branch on the same figure
+#     for branch in edge_list:
+#         plt.plot(result_df[branch], label=branch)
+    
+#     # Add labels, title, and legend
+#     plt.xlabel('Site', fontsize=12)
+#     plt.ylabel('Z-score', fontsize=12)
+#     plt.title(f'Sliding Window Analysis Combined for {len(edge_list)} Branches', fontsize=14)
+#     plt.legend(title='Branch', loc='best')
+#     plt.grid(True)
+    
+#     # Save the figure to a PDF
+#     plt.savefig(output_pdf)
+#     plt.close()  # Close the figure to free up memory
+
+#     print(f"Combined plot has been saved to {output_pdf}")
+
+
+
+
+def plot_sliding_window_analysis_combined(csv_files, results_dir, edge_list=None):
     """
-    Plots the sliding window analysis for each branch in the provided results file on the same plot and saves it in a PDF.
+    Plots the sliding window analysis for each branch in the provided CSV files on the same plot and saves it in a PDF.
 
     Args:
-        csv_file (str): Path to the CSV file containing the sliding window analysis data.
+        csv_files (list of str): List of paths to CSV files containing the sliding window analysis data.
         results_dir (str): Directory where the output PDF will be saved.
-        edge_list (list, optional): List of branches to include in the plot. If None, include all branches.
+        edge_list (list, optional): List of branches to include in the plot. If None, include all branches from all CSV files.
     """
-    # Load the result DataFrame
-    result_df = pd.read_csv(csv_file)
+    combined_df = pd.DataFrame()
 
-    # Filter by edge_list if provided
-    if edge_list is not None:
-        result_df = result_df[edge_list]
-    else:
-        edge_list = result_df.columns.tolist()
+    # Load and concatenate all CSV files
+    for csv_file in csv_files:
+        temp_df = pd.read_csv(csv_file)
+
+        # If edge_list is provided, filter the DataFrame by the edge_list
+        if edge_list is not None:
+            temp_df = temp_df[edge_list]
+
+        # Append the data to the combined DataFrame
+        combined_df = pd.concat([combined_df, temp_df], axis=0)
+
+    # If edge_list is not provided, include all branches
+    if edge_list is None:
+        edge_list = combined_df.columns.tolist()
 
     output_pdf = os.path.join(results_dir, f"Sliding_window_analysis_combined_for_{len(edge_list)}_branches.pdf")
 
@@ -79,8 +131,9 @@ def plot_sliding_window_analysis_combined(csv_file, results_dir, edge_list=None)
 
     # Plot each branch on the same figure
     for branch in edge_list:
-        plt.plot(result_df[branch], label=branch)
-    
+        truncated_branch_name = branch[:30]  # Truncate branch name to 20 characters
+        plt.plot(combined_df[branch], label=truncated_branch_name)
+
     # Add labels, title, and legend
     plt.xlabel('Site', fontsize=12)
     plt.ylabel('Z-score', fontsize=12)
@@ -92,8 +145,7 @@ def plot_sliding_window_analysis_combined(csv_file, results_dir, edge_list=None)
     plt.savefig(output_pdf)
     plt.close()  # Close the figure to free up memory
 
-    print(f"Combined plot has been saved to {output_pdf}")
-
+    print(f"Combined plot for Sliding Window Analysis has been saved to {output_pdf}")
 
 
 
@@ -114,7 +166,7 @@ if __name__ == "__main__":
 
     """" Visualise Sliding window analysis for different Branches"""
     
-    csv_file = find_file_with_suffix_in_directory("sliding_window_size_36.csv", results_dir)
+    csv_file = find_files_with_suffix_in_directory("sliding_window_size_36.csv", results_dir)
     plot_sliding_window_analysis_combined(csv_file, results_dir)
    
 

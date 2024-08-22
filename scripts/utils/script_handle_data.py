@@ -2,11 +2,49 @@ import os
 import re
 import pandas as pd
 import sys
+import io
 from pandas import DataFrame
 from utils.script_handle_tree import  write_nexus_file
 
 
+def extract_relative_category_rates_from_satute(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
 
+    string_table = []
+    # Find the start of the table
+    table = False
+    for  line in lines:
+        if "Category" in line and "Relative_rate" in line:         
+            table = True
+            continue
+            
+        if table: 
+            if "SPECTRAL DECOMPOSITION" in line: 
+                break
+            if line.strip()!= "":
+                string_table.append(line.strip())
+
+    if not table:
+        raise ValueError("Table not found in the file.")
+    
+    # Join the lines into a single string and convert to a DataFrame
+    table_str = '\n'.join(string_table)
+    columns = [
+        "Category", 
+        "Relative_rate", 
+        "Proportion", 
+        "Empirical_Proportion"
+    ]
+    df = pd.read_csv(io.StringIO(table_str), delim_whitespace=True, names=columns)    
+
+    # Select only the first two columns
+    df = df[["Category", "Relative_rate"]]
+
+    # Rename the Category column to c1, c2, ...
+    df["Category"] = ['c{}'.format(i + 1) for i in range(len(df))]
+    
+    return df
 
 def parse_file_to_data_frame(file_path):
     try:
@@ -81,7 +119,7 @@ def extract_rows_with_value(df, column_name, target_value):
 def rearrange_dataframe(summarized_data):
 
     # Rearrange the data frame
-    rearranged_df = summarized_data.groupby('edge').agg(
+    rearranged_df = summarized_data.groupby('branch').agg(
         category=pd.NamedAgg(column='rate_category', aggfunc=lambda x: list(x.unique())),
         result_test=pd.NamedAgg(column='decision_test', aggfunc=lambda x: list(x.unique())),
         dataset=pd.NamedAgg(column='dataset', aggfunc=lambda x: list(x.unique())),
@@ -92,9 +130,9 @@ def rearrange_dataframe(summarized_data):
 def rearrange_dataframe_correction(summarized_data):
 
     # Rearrange the data frame
-    rearranged_df = summarized_data.groupby('edge').agg(
+    rearranged_df = summarized_data.groupby('branch').agg(
         category=pd.NamedAgg(column='rate_category', aggfunc=lambda x: list(x.unique())),
-        result_test=pd.NamedAgg(column='decision_corrected_test_tips', aggfunc=lambda x: list(x.unique())),
+        result_test=pd.NamedAgg(column='decision_bonferroni_corrected', aggfunc=lambda x: list(x.unique())),
         dataset=pd.NamedAgg(column='dataset', aggfunc=lambda x: list(x.unique())),
     ).reset_index()
    
@@ -107,7 +145,7 @@ def extract_rows_of_csv(data):
 
 def extract_rows_of_csv_correction(data):
     # Replace this function with your specific action to extract rows with decision "Saturated"
-    return data[data['decision_corrected_test_tips'] == 'Saturated'].copy()
+    return data[data['decision_bonferroni_corrected'] == 'Saturated'].copy()
 
 def add_seq_len_category_from_siteprob(data, categorized_sites, directory_path):
     category = list(data.loc[:, 'category_rate'])[0]
@@ -139,7 +177,7 @@ def add_seq_len_category_from_log(data, directory_path):
     return data
 
 
-def summarize_results_categories(directory_path, dataset_name):
+def summarize_saturated_results_categories(directory_path, dataset_name):
     # Initialize an empty DataFrame to store the summarized data
     summarized_data = pd.DataFrame()
     summarized_data_corrrection = pd.DataFrame()
@@ -192,9 +230,9 @@ def summarize_z_scores_categories(directory_path, dataset_name):
         
         # Read CSV file
         data = pd.read_csv(os.path.join(directory_path, file))
-        filtered_data = data[data['test_statistic'] != 'duplicate sequence']
         
-        filtered_data = filtered_data[['edge', 'coefficient_value', 'standard_error_of_mean','test_statistic','z_alpha','z_alpha_corrected','number_of_sites', 'rate_category']]
+        
+        filtered_data = data[['branch', 'z_score', 'z_alpha','z_alpha_bonferroni_corrected','number_of_sites', 'rate_category']].copy()
         if not filtered_data.empty:
             # Add dataset name
             filtered_data.loc[:, 'dataset'] = dataset_name
@@ -252,17 +290,21 @@ def process_gene_directory(directory_path, dataset_name,newick_string):
        
     return summarized_data
 
-def process_directory(directory_path, dataset_name,newick_string):
+def process_directory(directory_path, dataset_name,newick_string, results_dir= None):
+    if results_dir is None:
+        results_dir = directory_path
+
+    print(results_dir)
 
     # Data frame to store the summarized results for saturation over all categories
-    summarized_data, summarized_data_correction = summarize_results_categories(directory_path, dataset_name)
+    summarized_data, summarized_data_correction = summarize_saturated_results_categories(directory_path, dataset_name)
     
     if not summarized_data.empty:  
         # Rearrange summarized data
         rearranged_data = rearrange_dataframe(summarized_data)
 
         # Save rearranged data
-        csv_file_path = os.path.join(directory_path, f"{dataset_name}_summarized_data.csv")
+        csv_file_path = os.path.join(results_dir, f"{dataset_name}_summary_saturation.csv")
         # Write DataFrame to CSV file
         rearranged_data.to_csv(csv_file_path, index=False)
 
@@ -270,7 +312,7 @@ def process_directory(directory_path, dataset_name,newick_string):
         if newick_string:
             # map rearranged data to it
             #print(newick_string)
-            result_nexus_file = os.path.join(directory_path, f"{dataset_name}_summary_tree.nex")
+            result_nexus_file = os.path.join(results_dir, f"{dataset_name}_summary_saturation_tree.nex")
             write_nexus_file(newick_string,result_nexus_file,rearranged_data)
     else:
         print("No saturated branches for ", dataset_name, "!")
@@ -280,7 +322,7 @@ def process_directory(directory_path, dataset_name,newick_string):
         rearranged_data = rearrange_dataframe_correction(summarized_data_correction)
 
         # Save rearranged data
-        csv_file_path = os.path.join(directory_path, f"{dataset_name}_summarized_data_correction.csv")
+        csv_file_path = os.path.join(results_dir, f"{dataset_name}_summary_saturation_bonferroni_corrected.csv")
         # Write DataFrame to CSV file
         rearranged_data.to_csv(csv_file_path, index=False)
 
@@ -288,7 +330,7 @@ def process_directory(directory_path, dataset_name,newick_string):
         if newick_string:
             # map rearranged data to it
             #print(newick_string)
-            result_nexus_file = os.path.join(directory_path, f"{dataset_name}_summary_tree_corrrection.nex")
+            result_nexus_file = os.path.join(results_dir, f"{dataset_name}_summary_saturation_bonferroni_corrrected.nex")
             write_nexus_file(newick_string,result_nexus_file,rearranged_data)
         
     return summarized_data

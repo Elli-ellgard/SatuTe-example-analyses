@@ -1,6 +1,6 @@
 
 #### TIMESTAMP ####
-2024-08-19 11:40:59 
+2024-08-20 18:21:28 
 
 #### REFERENCE ####
 
@@ -31,14 +31,13 @@ Rate Matrix Q:
 0.3369	0.3547	-1.0331	0.3415
 0.3405	0.3192	0.3395	-0.9992
 
-
 Stationary Distribution:
 0.2377	0.2612	0.2498	0.2513
+
 
 #### MODEL FOR RATE HETEROGENEITY ####
 
 #### SPECTRAL DECOMPOSITION ####
-
 
 Second Largest Eigenvalue: -1.2595594107688097
 
@@ -46,6 +45,7 @@ Multiplicity: 1
 
 Eigenvectors: 
 0.7471	-1.6076	0.0954	0.8695
+
 
 #### SATURATION TEST ####
 

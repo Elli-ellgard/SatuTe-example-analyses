@@ -1,6 +1,6 @@
 
 #### TIMESTAMP ####
-2024-08-19 11:40:54 
+2024-08-20 18:21:24 
 
 #### REFERENCE ####
 
@@ -31,9 +31,9 @@ Rate Matrix Q:
 0.3333	0.3333	-1.0000	0.3333
 0.3333	0.3333	0.3333	-1.0000
 
-
 Stationary Distribution:
 0.2500	0.2500	0.2500	0.2500
+
 
 #### MODEL FOR RATE HETEROGENEITY ####
 
@@ -45,8 +45,8 @@ Category  Relative_rate  Proportion  Empirical Proportion (alignment length 1000
        3         1.0170        0.25                                         0.042
        4         1.0720        0.25                                         0.407
 
-#### SPECTRAL DECOMPOSITION ####
 
+#### SPECTRAL DECOMPOSITION ####
 
 Second Largest Eigenvalue: -1.3333333333333333
 
@@ -56,6 +56,7 @@ Eigenvectors:
 0.0000	1.5842	-0.4491	-1.1351
 0.0000	0.3961	-1.5700	1.1740
 -1.7321	0.5774	0.5774	0.5774
+
 
 #### SATURATION TEST ####
 

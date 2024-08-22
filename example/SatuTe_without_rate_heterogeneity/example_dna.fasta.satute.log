@@ -1,4 +1,4 @@
-2024-08-19 11:40:57,797 - INFO - 
+2024-08-20 18:21:26,757 - INFO - 
 SatuTe Version 0.0.1 
 
 To cite SatuTe please use:
@@ -7,14 +7,14 @@ When the past fades: Detecting phylogenetic signal with SatuTe
 Nature Methods
 DOI: 
 
-2024-08-19 11:40:57,798 - INFO - IQ-TREE will not to be needed the analysis will be done on the already existing iqtree files.
-2024-08-19 11:40:57,802 - INFO - Run SatuTe on: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta
-2024-08-19 11:40:57,802 - INFO - Tree and parameters are read from: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
-2024-08-19 11:40:57,802 - INFO - Results will be written to the directory: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree
-2024-08-19 11:40:57,802 - INFO - Running tests and initial IQ-Tree Run with configurations: dir
-2024-08-19 11:40:57,802 - INFO - IQ-Tree inferred Tree: (A1:0.0620872,A2:0.160855,((A3:0.044331,A4:0.118352)Node3*:0.141098,(((A5:0.0701456,A6:0.0591509)Node6*:0.0702762,(A7:0.0387114,A8:0.0490782)Node7*:0.0401584)Node5*:0.0648247,((((B1:0.117921,B2:0.110854)Node11*:0.0989783,((B5:0.101388,B6:0.0221458)Node13*:0.201035,(B7:0.111494,B8:0.0722165)Node14*:0.0483842)Node12*:0.184444)Node10*:0.111016,B3:0.11068)Node9*:0.0460294,B4:2.4276e-06)Node8*:2.26473)Node4*:0.0613911)Node2*:0.168195)Node1*:0;
-2024-08-19 11:40:59,091 - INFO - Writing results for category rates to file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute
-2024-08-19 11:40:59,091 - INFO - Tree for rate category single_rate: (A1:0.0620872,A2:0.160855,((A3:0.044331,A4:0.118352)Node3*:0.141098,(((A5:0.0701456,A6:0.0591509)Node6*:0.0702762,(A7:0.0387114,A8:0.0490782)Node7*:0.0401584)Node5*:0.0648247,((((B1:0.117921,B2:0.110854)Node11*:0.0989783,((B5:0.101388,B6:0.0221458)Node13*:0.201035,(B7:0.111494,B8:0.0722165)Node14*:0.0483842)Node12*:0.184444)Node10*:0.111016,B3:0.11068)Node9*:0.0460294,B4:2.4276e-06)Node8*:2.26473)Node4*:0.0613911)Node2*:0.168195)Node1*:0;
-2024-08-19 11:40:59,095 - INFO - Nexus file written successfully: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.nex
-2024-08-19 11:40:59,095 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.nex
-2024-08-19 11:40:59,096 - INFO - Results saved to CSV file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.csv
+2024-08-20 18:21:26,757 - INFO - IQ-TREE will not to be needed the analysis will be done on the already existing iqtree files.
+2024-08-20 18:21:26,762 - INFO - Run SatuTe on: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta
+2024-08-20 18:21:26,762 - INFO - Tree and parameters are read from: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
+2024-08-20 18:21:26,762 - INFO - Results will be written to the directory: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree
+2024-08-20 18:21:26,762 - INFO - Running tests and initial IQ-Tree Run with configurations: dir
+2024-08-20 18:21:26,762 - INFO - IQ-Tree inferred tree: (A1:0.0620872,A2:0.160855,((A3:0.044331,A4:0.118352)Node3*:0.141098,(((A5:0.0701456,A6:0.0591509)Node6*:0.0702762,(A7:0.0387114,A8:0.0490782)Node7*:0.0401584)Node5*:0.0648247,((((B1:0.117921,B2:0.110854)Node11*:0.0989783,((B5:0.101388,B6:0.0221458)Node13*:0.201035,(B7:0.111494,B8:0.0722165)Node14*:0.0483842)Node12*:0.184444)Node10*:0.111016,B3:0.11068)Node9*:0.0460294,B4:2.4276e-06)Node8*:2.26473)Node4*:0.0613911)Node2*:0.168195)Node1*:0;
+2024-08-20 18:21:27,972 - INFO - Writing results for category rates to file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute
+2024-08-20 18:21:27,972 - INFO - Tree for rate category single_rate: (A1:0.0620872,A2:0.160855,((A3:0.044331,A4:0.118352)Node3*:0.141098,(((A5:0.0701456,A6:0.0591509)Node6*:0.0702762,(A7:0.0387114,A8:0.0490782)Node7*:0.0401584)Node5*:0.0648247,((((B1:0.117921,B2:0.110854)Node11*:0.0989783,((B5:0.101388,B6:0.0221458)Node13*:0.201035,(B7:0.111494,B8:0.0722165)Node14*:0.0483842)Node12*:0.184444)Node10*:0.111016,B3:0.11068)Node9*:0.0460294,B4:2.4276e-06)Node8*:2.26473)Node4*:0.0613911)Node2*:0.168195)Node1*:0;
+2024-08-20 18:21:27,976 - INFO - Nexus file written successfully: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.nex
+2024-08-20 18:21:27,976 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.nex
+2024-08-20 18:21:27,977 - INFO - Results saved to CSV file: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.csv

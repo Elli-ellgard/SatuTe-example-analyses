@@ -1,0 +1,111 @@
+
+#### TIMESTAMP ####
+2024-08-23 14:41:11 
+
+#### REFERENCE ####
+
+
+SatuTe Version 1.0.6 
+
+To cite SatuTe please use:
+C. Manuel, C. Elgert, E. Sakalli, H. A. Schmidt, C. Viñas and A. von Haeseler
+When the past fades: Detecting phylogenetic signal with SatuTe
+Nature Methods
+DOI: 
+
+
+#### INPUT ####
+
+
+Used alignment file from directory: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta
+
+Tree and substitution model are read from: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
+
+IQ-Tree inferred tree: (A1:0.0621769,A2:0.160971,((A3:0.0445256,A4:0.118236)Node3*:0.140263,(((A5:0.0701052,A6:0.0591515)Node6*:0.0703121,(A7:0.038598,A8:0.0491595)Node7*:0.0402387)Node5*:0.00412474,((((B1:0.117896,B2:0.110823)Node11*:0.0987608,((B5:0.101267,B6:0.0223541)Node13*:0.201315,(B7:0.111428,B8:0.07249)Node14*:0.0481125)Node12*:0.184126)Node10*:0.110981,B3:0.110603)Node9*:0.0458633,B4:2.2632e-06)Node8*:2.3051)Node4*:0.122026)Node2*:0.168356)Node1*:0;
+
+
+#### SUBSTITUTION MODEL ####
+
+
+User chosen substitution model: JC+G4
+
+Rate Matrix Q:
+-1.0000	0.3333	0.3333	0.3333
+0.3333	-1.0000	0.3333	0.3333
+0.3333	0.3333	-1.0000	0.3333
+0.3333	0.3333	0.3333	-1.0000
+
+Stationary Distribution:
+0.2500	0.2500	0.2500	0.2500
+
+
+#### MODEL FOR RATE HETEROGENEITY ####
+
+Gamma shape parameter: 320.3
+
+Category  Relative_rate  Proportion  Empirical Proportion (alignment length 1000)
+       1         0.9299        0.25                                         0.436
+       2         0.9810        0.25                                         0.115
+       3         1.0170        0.25                                         0.042
+       4         1.0720        0.25                                         0.407
+
+
+#### SPECTRAL DECOMPOSITION ####
+
+
+Second Largest Eigenvalue: -1.3333333333333328
+
+Multiplicity: 3
+
+Eigenvectors: 
+0.0000	1.6125	-1.0297	-0.5828
+0.0000	-0.2580	-1.2674	1.5255
+-1.7321	0.5774	0.5774	0.5774
+
+
+#### SATURATION TEST ####
+
+
+Significance level: 0.05
+
+Tested branches: all
+
+Tested rate categories: all
+
+#### OUTPUT ####
+
+
+CSV FILES
+
+The satute.csv file provides a comprehensive overview of the saturation test results for a specific branch or all branches.
+Containing: branch, mean_coherence, standard_error_of_mean, z_score, p_value, z_alpha, decision_test,
+z_alpha_bonferroni_corrected,decision_bonferroni_corrected, branch_length, number_of_sites, rate_category
+
+Results for category c1 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.csv
+Results for category c2 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.csv
+Results for category c3 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.csv
+Results for category c4 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.csv
+
+
+COHERENCE AND VARIANCE PER SITE FOR EACH CATEGORY
+
+The components file provides the estimated (category) variance and the coherence coefficient for each site and branch in 
+the tree, enabling other analysis of the saturation status like sliding window analysis.
+Containing: branch, site, coherence, category_variance, rate_category.
+
+Results for category c1 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.components.csv
+Results for category c2 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.components.csv
+Results for category c3 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.components.csv
+Results for category c4 to CSV File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.components.csv
+
+
+NEXUS FILES
+
+The file contains a block for the taxon labels and a block for the phylogenetic tree,
+with the most important test results integrated into the NEWICK string as metadata.
+Containing: z_score, p_value, decision_test.
+
+Results for category c1 to Nexus File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.nex
+Results for category c2 to Nexus File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.nex
+Results for category c3 to Nexus File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.nex
+Results for category c4 to Nexus File: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.nex

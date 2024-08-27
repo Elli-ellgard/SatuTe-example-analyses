@@ -1,0 +1,94 @@
+
+#### TIMESTAMP ####
+2024-08-23 14:41:14 
+
+#### REFERENCE ####
+
+
+SatuTe Version 1.0.6 
+
+To cite SatuTe please use:
+C. Manuel, C. Elgert, E. Sakalli, H. A. Schmidt, C. Viñas and A. von Haeseler
+When the past fades: Detecting phylogenetic signal with SatuTe
+Nature Methods
+DOI: 
+
+
+#### INPUT ####
+
+
+Used alignment file from directory: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta
+
+Tree and substitution model are read from: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
+
+IQ-Tree inferred tree: (A1:0.0620872,A2:0.160855,((A3:0.044331,A4:0.118352)Node3*:0.141098,(((A5:0.0701456,A6:0.0591509)Node6*:0.0702762,(A7:0.0387114,A8:0.0490782)Node7*:0.0401584)Node5*:0.0648247,((((B1:0.117921,B2:0.110854)Node11*:0.0989783,((B5:0.101388,B6:0.0221458)Node13*:0.201035,(B7:0.111494,B8:0.0722165)Node14*:0.0483842)Node12*:0.184444)Node10*:0.111016,B3:0.11068)Node9*:0.0460294,B4:2.4276e-06)Node8*:2.26473)Node4*:0.0613911)Node2*:0.168195)Node1*:0;
+
+
+#### SUBSTITUTION MODEL ####
+
+
+User chosen substitution model: GTR+F
+
+Rate Matrix Q:
+-1.0344	0.3203	0.3541	0.3600
+0.2915	-0.9379	0.3392	0.3071
+0.3369	0.3547	-1.0331	0.3415
+0.3405	0.3192	0.3395	-0.9992
+
+Stationary Distribution:
+0.2377	0.2612	0.2498	0.2513
+
+
+#### MODEL FOR RATE HETEROGENEITY ####
+
+
+Rate Category: None
+
+
+#### SPECTRAL DECOMPOSITION ####
+
+
+Second Largest Eigenvalue: -1.2595594107688093
+
+Multiplicity: 1
+
+Eigenvectors: 
+0.7471	-1.6076	0.0954	0.8695
+
+
+#### SATURATION TEST ####
+
+
+Significance level: 0.01
+
+Tested branches: all
+
+
+#### OUTPUT ####
+
+
+CSV FILES
+
+The satute.csv file provides a comprehensive overview of the saturation test results for a specific branch or all branches.
+Containing: branch, mean_coherence, standard_error_of_mean, z_score, p_value, z_alpha, decision_test,
+z_alpha_bonferroni_corrected,decision_bonferroni_corrected, branch_length, number_of_sites, rate_category
+
+Results for category single_rate to CSV File: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.csv
+
+
+COHERENCE AND VARIANCE PER SITE FOR EACH CATEGORY
+
+The components file provides the estimated (category) variance and the coherence coefficient for each site and branch in 
+the tree, enabling other analysis of the saturation status like sliding window analysis.
+Containing: branch, site, coherence, category_variance, rate_category.
+
+Results for category single_rate to CSV File: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.components.csv
+
+
+NEXUS FILES
+
+The file contains a block for the taxon labels and a block for the phylogenetic tree,
+with the most important test results integrated into the NEWICK string as metadata.
+Containing: z_score, p_value, decision_test.
+
+Results for category single_rate to Nexus File: /home/elgert/Desktop/Cassius/SatuTe-example-analyses/example/SatuTe_without_rate_heterogeneity/iqtree/example_dna.fasta_single_rate_0.01.satute.nex

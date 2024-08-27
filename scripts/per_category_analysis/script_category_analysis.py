@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 
+# Add the root directory (scripts) to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from utils.script_handle_data import (
     extract_relative_category_rates_from_satute
 )

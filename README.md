@@ -1,4 +1,4 @@
-# SatuTe Example Analysis
+# SatuTe Example Analyses
 
 [SatuTe](https://github.com/Elli-ellgard/SatuTe) (Saturation Test) is a Python-based tool designed to evaluate the presence of phylogenetic information in analyses. Saturation occurs when multiple substitutions obscure true genetic distances, potentially leading to artifacts and errors in phylogenetic inference. SatuTe introduces a new measure that extends the concept of saturation between two sequences to a theory of saturation between subtrees. The test implemented in SatuTe quantifies whether a given alignment provides sufficient phylogenetic information shared between two subtrees connected by a branch in a phylogeny.
 

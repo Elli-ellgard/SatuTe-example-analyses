@@ -1,4 +1,4 @@
-2024-09-02 07:19:13,482 - INFO - 
+2024-09-02 07:43:46,182 - INFO - 
 
 SatuTe Version 1.0.6 
 
@@ -9,29 +9,29 @@ Nature Methods
 DOI: 
 
 
-2024-09-02 07:19:13,482 - INFO - IQ-TREE will not to be needed the analysis will be done on the already existing iqtree files.
-2024-09-02 07:19:13,524 - INFO - Run SatuTe on: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta
-2024-09-02 07:19:13,524 - INFO - Tree and parameters are read from: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
-2024-09-02 07:19:13,524 - INFO - Results will be written to the directory: /SatuTe_with_rate_heterogeneity/iqtree
-2024-09-02 07:19:13,524 - INFO - Running tests and initial IQ-Tree Run with configurations: dir
-2024-09-02 07:19:13,524 - INFO - IQ-Tree inferred tree: (A1:0.0621769,A2:0.160971,((A3:0.0445256,A4:0.118236)Node3*:0.140263,(((A5:0.0701052,A6:0.0591515)Node6*:0.0703121,(A7:0.038598,A8:0.0491595)Node7*:0.0402387)Node5*:0.00412474,((((B1:0.117896,B2:0.110823)Node11*:0.0987608,((B5:0.101267,B6:0.0223541)Node13*:0.201315,(B7:0.111428,B8:0.07249)Node14*:0.0481125)Node12*:0.184126)Node10*:0.110981,B3:0.110603)Node9*:0.0458633,B4:2.2632e-06)Node8*:2.3051)Node4*:0.122026)Node2*:0.168356)Node1*:0;
-2024-09-02 07:19:15,427 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute
-2024-09-02 07:19:15,427 - INFO - Tree for rate category p1: (A1:0.0578183,A2:0.149687,((A3:0.0414043,A4:0.109947)Node3*:0.130431,(((A5:0.0651909,A6:0.055005)Node6*:0.0653832,(A7:0.0358923,A8:0.0457134)Node7*:0.037418)Node5*:0.0038356,((((B1:0.109632,B2:0.103055)Node11*:0.0918377,((B5:0.0941684,B6:0.020787)Node13*:0.187203,(B7:0.103617,B8:0.0674084)Node14*:0.0447398)Node12*:0.171219)Node10*:0.103201,B3:0.102849)Node9*:0.0426483,B4:2.10455e-06)Node8*:2.14352)Node4*:0.113472)Node2*:0.156554)Node1*:0;
-2024-09-02 07:19:15,437 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.nex
-2024-09-02 07:19:15,437 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.nex
-2024-09-02 07:19:15,438 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.csv
-2024-09-02 07:19:15,438 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute
-2024-09-02 07:19:15,438 - INFO - Tree for rate category p2: (A1:0.0609955,A2:0.157913,((A3:0.0436796,A4:0.115989)Node3*:0.137598,(((A5:0.0687732,A6:0.0580276)Node6*:0.0689762,(A7:0.0378646,A8:0.0482254)Node7*:0.0394742)Node5*:0.00404637,((((B1:0.115656,B2:0.108718)Node11*:0.0968844,((B5:0.0993431,B6:0.0219293)Node13*:0.19749,(B7:0.109311,B8:0.0711126)Node14*:0.0471984)Node12*:0.180628)Node10*:0.108872,B3:0.108501)Node9*:0.0449919,B4:2.2202e-06)Node8*:2.26131)Node4*:0.119707)Node2*:0.165157)Node1*:0;
-2024-09-02 07:19:15,443 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.nex
-2024-09-02 07:19:15,443 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.nex
-2024-09-02 07:19:15,443 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.csv
-2024-09-02 07:19:15,443 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute
-2024-09-02 07:19:15,444 - INFO - Tree for rate category p3: (A1:0.0632339,A2:0.163708,((A3:0.0452825,A4:0.120246)Node3*:0.142648,(((A5:0.071297,A6:0.0601571)Node6*:0.0715074,(A7:0.0392542,A8:0.0499952)Node7*:0.0409228)Node5*:0.00419486,((((B1:0.119901,B2:0.112707)Node11*:0.10044,((B5:0.102989,B6:0.0227341)Node13*:0.204737,(B7:0.113323,B8:0.0737223)Node14*:0.0489304)Node12*:0.187256)Node10*:0.112867,B3:0.112483)Node9*:0.046643,B4:2.30167e-06)Node8*:2.34429)Node4*:0.1241)Node2*:0.171218)Node1*:0;
-2024-09-02 07:19:15,448 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.nex
-2024-09-02 07:19:15,448 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.nex
-2024-09-02 07:19:15,448 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.csv
-2024-09-02 07:19:15,448 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute
-2024-09-02 07:19:15,449 - INFO - Tree for rate category p4: (A1:0.0666536,A2:0.172561,((A3:0.0477314,A4:0.126749)Node3*:0.150362,(((A5:0.0751528,A6:0.0634104)Node6*:0.0753746,(A7:0.0413771,A8:0.052699)Node7*:0.0431359)Node5*:0.00442172,((((B1:0.126385,B2:0.118803)Node11*:0.105872,((B5:0.108558,B6:0.0239636)Node13*:0.21581,(B7:0.119451,B8:0.0777092)Node14*:0.0515766)Node12*:0.197383)Node10*:0.118971,B3:0.118566)Node9*:0.0491655,B4:2.42615e-06)Node8*:2.47107)Node4*:0.130812)Node2*:0.180478)Node1*:0;
-2024-09-02 07:19:15,453 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.nex
-2024-09-02 07:19:15,453 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.nex
-2024-09-02 07:19:15,453 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.csv
+2024-09-02 07:43:46,182 - INFO - IQ-TREE will not to be needed the analysis will be done on the already existing iqtree files.
+2024-09-02 07:43:46,212 - INFO - Run SatuTe on: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta
+2024-09-02 07:43:46,212 - INFO - Tree and parameters are read from: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta.iqtree
+2024-09-02 07:43:46,212 - INFO - Results will be written to the directory: /SatuTe_with_rate_heterogeneity/iqtree
+2024-09-02 07:43:46,212 - INFO - Running tests and initial IQ-Tree Run with configurations: dir
+2024-09-02 07:43:46,212 - INFO - IQ-Tree inferred tree: (A1:0.0621769,A2:0.160971,((A3:0.0445256,A4:0.118236)Node3*:0.140263,(((A5:0.0701052,A6:0.0591515)Node6*:0.0703121,(A7:0.038598,A8:0.0491595)Node7*:0.0402387)Node5*:0.00412474,((((B1:0.117896,B2:0.110823)Node11*:0.0987608,((B5:0.101267,B6:0.0223541)Node13*:0.201315,(B7:0.111428,B8:0.07249)Node14*:0.0481125)Node12*:0.184126)Node10*:0.110981,B3:0.110603)Node9*:0.0458633,B4:2.2632e-06)Node8*:2.3051)Node4*:0.122026)Node2*:0.168356)Node1*:0;
+2024-09-02 07:43:47,833 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute
+2024-09-02 07:43:47,833 - INFO - Tree for rate category p1: (A1:0.0578183,A2:0.149687,((A3:0.0414043,A4:0.109947)Node3*:0.130431,(((A5:0.0651909,A6:0.055005)Node6*:0.0653832,(A7:0.0358923,A8:0.0457134)Node7*:0.037418)Node5*:0.0038356,((((B1:0.109632,B2:0.103055)Node11*:0.0918377,((B5:0.0941684,B6:0.020787)Node13*:0.187203,(B7:0.103617,B8:0.0674084)Node14*:0.0447398)Node12*:0.171219)Node10*:0.103201,B3:0.102849)Node9*:0.0426483,B4:2.10455e-06)Node8*:2.14352)Node4*:0.113472)Node2*:0.156554)Node1*:0;
+2024-09-02 07:43:47,842 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.nex
+2024-09-02 07:43:47,842 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.nex
+2024-09-02 07:43:47,843 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c1_0.05.satute.csv
+2024-09-02 07:43:47,843 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute
+2024-09-02 07:43:47,843 - INFO - Tree for rate category p2: (A1:0.0609955,A2:0.157913,((A3:0.0436796,A4:0.115989)Node3*:0.137598,(((A5:0.0687732,A6:0.0580276)Node6*:0.0689762,(A7:0.0378646,A8:0.0482254)Node7*:0.0394742)Node5*:0.00404637,((((B1:0.115656,B2:0.108718)Node11*:0.0968844,((B5:0.0993431,B6:0.0219293)Node13*:0.19749,(B7:0.109311,B8:0.0711126)Node14*:0.0471984)Node12*:0.180628)Node10*:0.108872,B3:0.108501)Node9*:0.0449919,B4:2.2202e-06)Node8*:2.26131)Node4*:0.119707)Node2*:0.165157)Node1*:0;
+2024-09-02 07:43:47,847 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.nex
+2024-09-02 07:43:47,847 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.nex
+2024-09-02 07:43:47,847 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c2_0.05.satute.csv
+2024-09-02 07:43:47,847 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute
+2024-09-02 07:43:47,847 - INFO - Tree for rate category p3: (A1:0.0632339,A2:0.163708,((A3:0.0452825,A4:0.120246)Node3*:0.142648,(((A5:0.071297,A6:0.0601571)Node6*:0.0715074,(A7:0.0392542,A8:0.0499952)Node7*:0.0409228)Node5*:0.00419486,((((B1:0.119901,B2:0.112707)Node11*:0.10044,((B5:0.102989,B6:0.0227341)Node13*:0.204737,(B7:0.113323,B8:0.0737223)Node14*:0.0489304)Node12*:0.187256)Node10*:0.112867,B3:0.112483)Node9*:0.046643,B4:2.30167e-06)Node8*:2.34429)Node4*:0.1241)Node2*:0.171218)Node1*:0;
+2024-09-02 07:43:47,851 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.nex
+2024-09-02 07:43:47,851 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.nex
+2024-09-02 07:43:47,852 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c3_0.05.satute.csv
+2024-09-02 07:43:47,852 - INFO - Writing results for category rates to file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute
+2024-09-02 07:43:47,852 - INFO - Tree for rate category p4: (A1:0.0666536,A2:0.172561,((A3:0.0477314,A4:0.126749)Node3*:0.150362,(((A5:0.0751528,A6:0.0634104)Node6*:0.0753746,(A7:0.0413771,A8:0.052699)Node7*:0.0431359)Node5*:0.00442172,((((B1:0.126385,B2:0.118803)Node11*:0.105872,((B5:0.108558,B6:0.0239636)Node13*:0.21581,(B7:0.119451,B8:0.0777092)Node14*:0.0515766)Node12*:0.197383)Node10*:0.118971,B3:0.118566)Node9*:0.0491655,B4:2.42615e-06)Node8*:2.47107)Node4*:0.130812)Node2*:0.180478)Node1*:0;
+2024-09-02 07:43:47,856 - INFO - Nexus file written successfully: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.nex
+2024-09-02 07:43:47,856 - INFO - Saturation Test Results for rate category mapped to tree in Nexus file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.nex
+2024-09-02 07:43:47,856 - INFO - Results saved to CSV file: /SatuTe_with_rate_heterogeneity/iqtree/example_dna.fasta_c4_0.05.satute.csv

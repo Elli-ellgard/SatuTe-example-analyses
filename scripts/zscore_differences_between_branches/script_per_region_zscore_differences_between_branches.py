@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
 
     # Specify the path to output
-    output_dir = os.path.join(current_directory,"../../example/results_branch_zscore_differences/", data_name)
+    output_dir = os.path.join(current_directory,"../../example/results_zscore_differences_branches/", data_name)
     os.makedirs(output_dir, exist_ok=True)
 
     per_region_zscore_differences_branches(region_annotation_file, satute_input_dir=input_dir, results_dir=output_dir)

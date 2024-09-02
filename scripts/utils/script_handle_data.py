@@ -4,8 +4,25 @@ import pandas as pd
 import sys
 import io
 from pandas import DataFrame
+import shutil
 from utils.script_handle_tree import  write_nexus_file
 
+
+def subdictonary_additional_info(current_dir):
+    directory_name = os.path.join(current_dir, "additional_info")
+
+    # Create the directory if it doesn't exist
+    os.makedirs(directory_name, exist_ok=True)
+
+    # List of file extensions to move
+    file_extensions = ['.csv', '.pdf']
+
+    # Move files with the specified extensions
+    for file_name in os.listdir(current_dir):
+        if any(file_name.endswith(ext) for ext in file_extensions):
+            shutil.move(os.path.join(current_dir, file_name), os.path.join(directory_name, file_name))
+
+   
 
 def extract_relative_category_rates_from_satute(file_path):
     with open(file_path, 'r') as file:

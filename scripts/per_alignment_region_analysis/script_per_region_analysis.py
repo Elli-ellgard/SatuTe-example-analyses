@@ -105,7 +105,7 @@ def per_region_analysis(annotation_file, satute_input_dir, edge_list=None, resul
 
                 # Calculate custom rolling metric using the window size
                 region_zscores, variance = calculate_region_zscores_per_branch(branch_data, region_info)
-
+          
                 if region_zscores:  # Only proceed if region_zscores is not empty
                     # Convert the region_zscores dictionary to a DataFrame
                     region_df = pd.DataFrame.from_dict(region_zscores, orient='index', columns=[branch])
@@ -119,7 +119,7 @@ def per_region_analysis(annotation_file, satute_input_dir, edge_list=None, resul
                     # Store the DataFrame in branch_results_dict under the branch name
                     branch_results_dict[branch] = region_df 
                     global_variance_list.append({'dataset': dataset, 'branch': branch, 'variance': variance})
-
+    print(branch_results_dict)
 
     if branch_results_dict:
         # Combine all branch DataFrames into a single DataFrame
@@ -138,6 +138,8 @@ def per_region_analysis(annotation_file, satute_input_dir, edge_list=None, resul
         combined_region_df.to_csv(region_csv_path, index=False)
 
         plot_zscores_per_region(combined_region_df, dataset, results_dir) 
+    else: 
+        print("ohje")
 
     if global_variance_list:  # Check if global_variance_list is not empty
         # Convert the list of dictionaries into a DataFrame

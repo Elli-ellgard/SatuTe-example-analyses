@@ -15,6 +15,10 @@ from per_alignment_region_analysis.script_per_region_analysis import (
     per_region_analysis,
 )
 
+from utils.script_handle_data import(
+    subdictonary_additional_info
+)
+
 def calculate_all_pairwise_differences(region_zscores_df):
     # Initialize a list to store the results
     results = []
@@ -53,6 +57,8 @@ def per_region_zscore_differences_branches(annotation_file, satute_input_dir, ed
         data_name = os.path.basename(satute_input_dir)
 
     region_zscores_df = per_region_analysis(annotation_file, satute_input_dir, edge_list, results_dir, data_name)
+
+    subdictonary_additional_info(results_dir)
     
     differences_df = calculate_all_pairwise_differences(region_zscores_df)
         

@@ -1,0 +1,94 @@
+
+#### TIMESTAMP ####
+2024-09-02 07:19:21 
+
+#### REFERENCE ####
+
+
+SatuTe Version 1.0.6 
+
+To cite SatuTe please use:
+C. Manuel, C. Elgert, E. Sakalli, H. A. Schmidt, C. Viñas and A. von Haeseler
+When the past fades: Detecting phylogenetic signal with SatuTe
+Nature Methods
+DOI: 
+
+
+#### INPUT ####
+
+
+Used alignment file from directory: /comparison_topology/iqtree/example_dna.fasta
+
+Tree and substitution model are read from: /comparison_topology/iqtree/example_dna.fasta.iqtree
+
+IQ-Tree inferred tree: (A1:0.0621005,A2:0.160845,((A3:0.0443544,A4:0.118327)Node3*:0.14091,(((A5:0.0701759,A6:0.0591291)Node6*:0.0703242,(A7:0.0387498,A8:0.0490388)Node7*:0.0401129)Node5*:0.00291345,((((B1:0.117926,B2:0.110853)Node11*:0.0989778,((B5:0.101387,B6:0.0221422)Node13*:0.201037,(B7:0.111498,B8:0.0722135)Node14*:0.0483901)Node12*:0.184452)Node10*:0.111029,B3:0.110687)Node9*:0.0460292,B4:2.4073e-06)Node8*:2.30424)Node4*:0.123269)Node2*:0.16831)Node1*:0;
+
+
+#### SUBSTITUTION MODEL ####
+
+
+User chosen substitution model: GTR+F
+
+Rate Matrix Q:
+-1.0352	0.3206	0.3546	0.3600
+0.2918	-0.9376	0.3397	0.3061
+0.3374	0.3552	-1.0338	0.3412
+0.3405	0.3182	0.3391	-0.9979
+
+Stationary Distribution:
+0.2377	0.2612	0.2498	0.2513
+
+
+#### MODEL FOR RATE HETEROGENEITY ####
+
+
+Rate Category: None
+
+
+#### SPECTRAL DECOMPOSITION ####
+
+
+Second Largest Eigenvalue: -1.258688965818243
+
+Multiplicity: 1
+
+Eigenvectors: 
+0.7319	-1.6039	0.0855	0.8897
+
+
+#### SATURATION TEST ####
+
+
+Significance level: 0.01
+
+Tested branches: all
+
+
+#### OUTPUT ####
+
+
+CSV FILES
+
+The satute.csv file provides a comprehensive overview of the saturation test results for a specific branch or all branches.
+Containing: branch, mean_coherence, standard_error_of_mean, z_score, p_value, z_alpha, decision_test,
+z_alpha_bonferroni_corrected,decision_bonferroni_corrected, branch_length, number_of_sites, rate_category
+
+Results for category single_rate to CSV File: /comparison_topology/iqtree/example_dna.fasta_single_rate_0.01.satute.csv
+
+
+COHERENCE AND VARIANCE PER SITE FOR EACH CATEGORY
+
+The components file provides the estimated (category) variance and the coherence coefficient for each site and branch in 
+the tree, enabling other analysis of the saturation status like sliding window analysis.
+Containing: branch, site, coherence, category_variance, rate_category.
+
+Results for category single_rate to CSV File: /comparison_topology/iqtree/example_dna.fasta_single_rate_0.01.satute.components.csv
+
+
+NEXUS FILES
+
+The file contains a block for the taxon labels and a block for the phylogenetic tree,
+with the most important test results integrated into the NEWICK string as metadata.
+Containing: z_score, p_value, decision_test.
+
+Results for category single_rate to Nexus File: /comparison_topology/iqtree/example_dna.fasta_single_rate_0.01.satute.nex

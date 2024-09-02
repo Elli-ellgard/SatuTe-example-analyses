@@ -1,0 +1,26 @@
+#NEXUS
+BEGIN TAXA;
+    DIMENSIONS NTAX=16;
+     TAXLABELS
+        A1
+        A2
+        A3
+        A4
+        A5
+        A6
+        A7
+        A8
+        B1
+        B2
+        B5
+        B6
+        B7
+        B8
+        B3
+        B4
+    ;
+END;
+
+BEGIN TREES;
+Tree tree1 = (A1:0.0621005[&z_score=25.7564,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],A2:0.160845[&z_score=23.885,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],((A3:0.0443544[&z_score=26.9805,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],A4:0.118327[&z_score=25.6211,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node3*:0.14091[&z_score=22.0013,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],(((A5:0.0701759[&z_score=27.82,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],A6:0.0591291[&z_score=28.383,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node6*:0.0703242[&z_score=26.7185,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],(A7:0.0387498[&z_score=29.1276,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],A8:0.0490388[&z_score=28.5877,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node7*:0.0401129[&z_score=27.2345,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node5*:0.00291345[&z_score=23.0271,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],((((B1:0.117926[&z_score=25.5511,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],B2:0.110853[&z_score=25.8334,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node11*:0.0989778[&z_score=23.0504,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],((B5:0.101387[&z_score=27.0688,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],B6:0.0221422[&z_score=27.9216,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node13*:0.201037[&z_score=22.5479,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],(B7:0.111498[&z_score=24.8933,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],B8:0.0722135[&z_score=26.2279,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node14*:0.0483901[&z_score=23.3829,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node12*:0.184452[&z_score=20.4104,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node10*:0.111029[&z_score=23.1446,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],B3:0.110687[&z_score=26.2995,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node9*:0.0460292[&z_score=27.1158,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative],B4:2.4073e-06[&z_score=27.5011,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node8*:2.30424[&z_score=2.3082,p_value=0.0105,decision_test=Saturated,decision_bonferroni_corrected=Saturated])Node4*:0.123269[&z_score=22.9317,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node2*:0.16831[&z_score=21.2638,p_value=0.0,decision_test=Informative,decision_bonferroni_corrected=Informative])Node1*:0;
+END;

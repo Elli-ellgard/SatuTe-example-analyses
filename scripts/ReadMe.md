@@ -12,14 +12,13 @@ This folder contains all the scripts necessary for performing various downstream
 | z-score differences  between branches               | `example/z_score_differences_branches/`      |
 | z-score differences  between topologies               | `example/z_score_differences_topologies/`      |
 
-
 ## Requirements
 
-Before running any scripts, make sure you have the following software and packages installed:
+Ensure you have the following software installed before running any scripts:
 
-- **Python 3.x**: Ensure that you have Python installed on your system.
+- **Python 3.x**: Confirm that Python is installed on your system.
 
-If you want to run the Tree of Life analysis, make sure you have additionally installed: 
+For those interested in running the Tree of Life analysis, the following additional tools are required:
 
-- **SatuTe**: The SatuTe tool itself should be installed.
-- **IQ-TREE**: Although not necessary for running the example scripts, IQ-TREE may be required for full analyses.
+- **SatuTe**: Make sure the SatuTe tool is installed.
+- **IQ-TREE**: Although not needed for the example scripts, IQ-TREE is essential for performing full-scale analyses.

@@ -16,9 +16,32 @@ The repository is organized as follows:
 
 ## 2. Prerequisites
 
-Before running any scripts, ensure you have the following software installed:
+## Prerequisites
 
-- **Python 3.x**: Confirm that Python is installed on your system.
+Before running any scripts, ensure you have:
+
+- **Python 3.10.12 or higher**: Check your Python version with:
+
+    ```bash
+    python3 --version
+    ```
+
+### Installation
+
+1. **(Optional) Create a Virtual Environment:**
+
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    ```
+
+2. **Install Required Packages:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+You're now ready to run the scripts!
 
 ### Additional Tools for Tree of Life Analysis
 

@@ -98,5 +98,5 @@ if __name__ == "__main__":
             data_name=dataname
         )
 
-    per_region_zscores_toplogies(region_zscores, output_dir, title="protein_based_2D_vs_3D_Eukaryota_branch")
+    per_region_zscores_toplogies(region_zscores, output_dir, title="protein_based_2D_minus_3D_Eukaryota_branch")
 

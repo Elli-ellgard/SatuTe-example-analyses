@@ -36,15 +36,18 @@ def combine_dict_to_df(data_dict):
     # Display the combined DataFrame
     return combined_df
 
-def per_region_zscores_toplogies(region_zscores_dict, results_dir):
+def per_region_zscores_toplogies(region_zscores_dict, results_dir, title=None):
     subdictonary_additional_info(results_dir)
     zscore_dataframe = combine_dict_to_df(region_zscores_dict) 
     differences_df = calculate_all_pairwise_differences(zscore_dataframe)
-        
-    csv_path = os.path.join(results_dir, f"Per_region_zscore_differences_topologies.csv")
+
+    if not title:
+        csv_path = os.path.join(results_dir, f"Per_region_zscore_differences_topologies.csv")
+    else: 
+        csv_path =  os.path.join(results_dir, f"Per_region_zscore_differences_topologies_{title}.csv")
     differences_df.to_csv(csv_path, index=False)
 
-    plot_zscore_differences_per_branch_pair(differences_df, "Different_topologies", results_dir)
+    plot_zscore_differences_per_branch_pair(differences_df, "Different_topologies", results_dir, title)
 
 
 if __name__ == "__main__":

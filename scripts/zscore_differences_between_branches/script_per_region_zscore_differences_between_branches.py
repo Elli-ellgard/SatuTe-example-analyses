@@ -68,7 +68,7 @@ def per_region_zscore_differences_branches(annotation_file, satute_input_dir, ed
     plot_zscore_differences_per_branch_pair(differences_df, data_name, results_dir)
 
 
-def plot_zscore_differences_per_branch_pair(differences_df, dataset_name, results_dir):
+def plot_zscore_differences_per_branch_pair(differences_df, dataset_name, results_dir, title=None):
     y_max = differences_df['zscore_difference'].max()
     y_min = differences_df['zscore_difference'].min()
     # Sort the differences in ascending order
@@ -77,7 +77,10 @@ def plot_zscore_differences_per_branch_pair(differences_df, dataset_name, result
     # Default to all unique branch pairs if edge_list is not provided
     edge_list = differences_df[['branch_one', 'branch_two']].drop_duplicates().values.tolist()
 
-    output_pdf = os.path.join(results_dir, f"{dataset_name}_zscore_differences_per_branch_pair.pdf")
+    if not title:
+        output_pdf = os.path.join(results_dir, f"{dataset_name}_zscore_differences_per_branch_pair.pdf")
+    else:
+        output_pdf = os.path.join(results_dir, f"{title}_zscore_differences.pdf")
 
     with PdfPages(output_pdf) as pdf:
         # Plot each branch pair
@@ -105,10 +108,17 @@ def plot_zscore_differences_per_branch_pair(differences_df, dataset_name, result
             )
             
             # Final plot adjustments
-            plt.title(f"Z-score Differences: {branch_one} vs {branch_two}", size=16)
+            if not title: 
+                title_text = f"Z-score Differences: {branch_one} vs {branch_two}"[:50]  # Limit title to 50 characters
+            else: 
+                title_text =  f"Z-score Differences: {title}"
+            plt.title(title_text, size=16)
             plt.ylim(y_min - 0.15, y_max + 0.15)
             plt.grid(False)
             plt.tight_layout()
+
+            plt.xlabel("Region", size=14)
+            plt.ylabel("Z-score differences", size=14)
 
             # Save the current figure to the PDF
             pdf.savefig()
@@ -151,7 +161,7 @@ if __name__ == "__main__":
     input_dir = os.path.join(current_directory, "../../example/SatuTe_without_rate_heterogeneity")
 
     # Specify the path to output
-    output_dir = os.path.join(current_directory,"../../example/results_branch_zscore_differences/", data_name)
+    output_dir = os.path.join(current_directory,"../../example/results_zscore_differences_branches/", data_name)
     os.makedirs(output_dir, exist_ok=True)
 
     per_region_zscore_differences_branches(region_annotation_file, input_dir, edge_list=["(A1, Node1*)","(Node4*, Node2*)"], results_dir=output_dir)

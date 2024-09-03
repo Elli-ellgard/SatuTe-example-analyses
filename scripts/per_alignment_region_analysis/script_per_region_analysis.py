@@ -119,8 +119,7 @@ def per_region_analysis(annotation_file, satute_input_dir, edge_list=None, resul
                     # Store the DataFrame in branch_results_dict under the branch name
                     branch_results_dict[branch] = region_df 
                     global_variance_list.append({'dataset': dataset, 'branch': branch, 'variance': variance})
-    print(branch_results_dict)
-
+ 
     if branch_results_dict:
         # Combine all branch DataFrames into a single DataFrame
         combined_region_df = pd.concat(branch_results_dict.values(), axis=1)
@@ -139,7 +138,7 @@ def per_region_analysis(annotation_file, satute_input_dir, edge_list=None, resul
 
         plot_zscores_per_region(combined_region_df, dataset, results_dir) 
     else: 
-        print("ohje")
+        print("Folder might be wrong.")
 
     if global_variance_list:  # Check if global_variance_list is not empty
         # Convert the list of dictionaries into a DataFrame

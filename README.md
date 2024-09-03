@@ -48,7 +48,7 @@ You're now ready to run the scripts!
 If you are planning to run the Tree of Life analysis, you'll need these additional tools:
 
 - **SatuTe**
-- **IQ-TREE**
+- **IQ-Tree2**
 
 #### Install SatuTe using pipx
 
@@ -78,13 +78,13 @@ If you are planning to run the Tree of Life analysis, you'll need these addition
 
 For more detailed instructions and information about pipx, refer to the [official pipx documentation](https://pypa.github.io/pipx/).
 
-#### IQ-TREE Installation
+#### IQ-Tree2 Installation
 
-1. **Download IQ-TREE** from the [official website](http://www.iqtree.org/#download).
+1. **Download IQ-Tree** from the [official website](http://www.iqtree.org/#download).
   
 2. **Follow the installation instructions** provided on the website for your operating system.
 
-3. **Test the IQ-TREE installation**: After installing IQ-TREE, verify the installation by checking its version:
+3. **Test the IQ-Tree installation**: After installing IQ-Tree, verify the installation by checking its version:
 
    ```bash
    iqtree2 --version

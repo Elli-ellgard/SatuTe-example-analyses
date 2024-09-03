@@ -1,6 +1,12 @@
-python=python3
+#!/bin/bash
 
-rm -r ../example/results*
+for dir in ../example/results*; do
+  if [ -d "$dir" ]; then
+    rm -r "$dir"
+  fi
+done
+
+python=python3
 
 # branch specific sliding analysis
 cd branch_specific_sliding_window_analysis/

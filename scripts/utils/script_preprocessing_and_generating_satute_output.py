@@ -85,7 +85,7 @@ def branch_specific_preprocessing(input_dir=None, fasta_file=None, tree_file=Non
 
     # Generate necessary data 
     for edge_folder in edges_dict.keys():
-        print(f"Run SATuTE for {edge_folder.upper()}")
+        print(f"Run SatuTe for {edge_folder.upper()}")
         folder_path = os.path.join(output_dir, edge_folder)
         run_satute_for_edge(edges_dict[edge_folder], tree_file, folder_path, path_iqtree, alpha, model)
         print("")

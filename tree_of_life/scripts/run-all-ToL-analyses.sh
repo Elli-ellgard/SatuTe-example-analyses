@@ -8,15 +8,15 @@ done
 
 python=python3
 
-# branch specific sliding analysis
-cd branch_specific_sliding_window_analysis/
-$python  swa-protein-based-2D-ToL.py
-$python  swa-protein-based-2D-ToL.py
-
 # branch specific per category analyses
-cd ../branch_specific_per_category_analysis/
+cd branch_specific_per_category_analysis/
 $python  pca-protein-based-2D-ToL.py
-$python  pca-protein-based-2D-ToL.py
+$python  pca-rna-based-3D-ToL.py
+
+# branch specific sliding analysis
+cd ../branch_specific_sliding_window_analysis/
+$python  swa-protein-based-2D-ToL.py
+$python  swa-rna-based-3D-ToL.py
 
 # z-score differences between  branches
 cd  ../zscore_differences_between_branches

@@ -13,7 +13,7 @@ from utils.script_preprocessing_and_generating_satute_output import (
 )
 
 from per_category_analysis.script_category_analysis import (
-    summary_catgeory_zscore_per_branch,
+    summary_category_zscore_per_branch,
 )
 
   

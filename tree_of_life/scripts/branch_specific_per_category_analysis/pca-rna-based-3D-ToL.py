@@ -13,7 +13,7 @@ from utils.script_preprocessing_and_generating_satute_output import (
 )
 
 from per_category_analysis.script_category_analysis import (
-    per_category_analysis,
+    summary_category_zscore_per_branch
 )
 
   
@@ -60,4 +60,11 @@ if __name__ == "__main__":
     os.makedirs(output_dir, exist_ok=True)
 
     # Using SatuTe output for the analysis
-    per_category_analysis(input_dir, results_dir=output_dir)
+    for edge_name in edges_dict.keys():
+        print(f"Generate directory for {edge_name.upper()}")
+
+        # Create a directory for the gene
+        edge_directory = os.path.join(satute_output_dir, edge_name)
+        os.makedirs(edge_directory, exist_ok=True)
+
+        summary_category_zscore_per_branch(edge_directory, results_dir=output_dir, data_name=edge_name)

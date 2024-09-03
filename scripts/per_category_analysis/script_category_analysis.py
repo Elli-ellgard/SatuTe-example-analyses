@@ -61,7 +61,7 @@ def custom_transform(y, y_max):
 def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name, results_dir, edge_list=None):
     # Calculate the maximum and minimum z-scores
     y_max = max(z_score_data["z_score"])
-    y_min = min(z_score_data["z_score"])
+    y_min = min(min(z_score_data["z_score"]),0)
 
     # If edge_list is not provided, include all branches
     if edge_list is None:
@@ -69,6 +69,10 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
 
     # Create a dictionary to map rate categories to relative rates
     category_rate_map = dict(zip(category_rates["Category"], category_rates["Relative_rate"]))
+
+    # Ensure the rate categories have a consistent order
+    category_order = category_rates["Category"].tolist()
+    z_score_data["rate_category"] = pd.Categorical(z_score_data["rate_category"], categories=category_order, ordered=True)
 
     output_pdf = f"{results_dir}/{dataset_name}_summary_zscores.pdf"
 
@@ -107,7 +111,8 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
                 data=branch_data_transformed, 
                 x='rate_category', 
                 y='number_informative_sites_transformed', 
-                color='lightgrey'
+                color='lightgrey',
+                order=category_order
             )
             
             # Overlay points and lines for z-scores
@@ -117,7 +122,8 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
                 y='z_score', 
                 hue='branch', 
                 markers='o', 
-                linestyles='dotted'
+                linestyles='dotted',
+                order=category_order
             )
             plt.legend().remove()
 
@@ -129,7 +135,7 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
             plt.text(len(category_rates) - 0.1, z_alpha_corrected + 1.2, r'$z_{\alpha[adjust]}$', color='red', size=12)
 
             # Customize x-ticks with relative rates as labels
-            relative_rate_labels = [f"{category_rate_map.get(lbl, lbl):.4f}" for lbl in branch_data['rate_category'].unique()]
+            relative_rate_labels = [f"{category_rate_map.get(lbl, lbl):.4f}" for lbl in category_order]
             plt.xticks(ticks=range(len(relative_rate_labels)), labels=relative_rate_labels, size=10)
 
             # Customize axis labels and limits
@@ -147,7 +153,8 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
             sec_ax.tick_params(axis='y', labelsize=10, colors='darkgrey')
 
             # Final plot adjustments
-            plt.title(f"Branch: {branch}", size=16)
+            title_text = f"Branch: {branch}"[:50]  # Limit title to 50 characters
+            plt.title(title_text, size=16)
             plt.grid(False)
             plt.tight_layout()
 
@@ -158,7 +165,7 @@ def plot_summary_z_scores_per_branch(z_score_data, category_rates, dataset_name,
     print(f"All plots have been saved to {output_pdf}")
 
 
-def summary_zscore_per_branch(satute_input_dir, data_name, results_dir, edge_list=None):
+def summary_category_zscore_per_branch(satute_input_dir, data_name, results_dir, edge_list=None):
 
     zscore_data = summarize_z_scores_categories(satute_input_dir, data_name)
 
@@ -183,7 +190,7 @@ def per_category_analysis(satute_input_dir, edge_list=None, results_dir=None, da
     summary_analysis_branch_saturation(satute_input_dir, data_name, newick_string, results_dir)
 
     print("\nSummary Zscores")
-    summary_zscore_per_branch(satute_input_dir, data_name, results_dir, edge_list)
+    summary_category_zscore_per_branch(satute_input_dir, data_name, results_dir, edge_list)
 
 
 

@@ -6,55 +6,55 @@ import time
 import sys
 # Add the directory containing the satute module to the Python path
 sys.path.append('/home/elgert/Desktop/Cassius/version_2024_08_19')
-# Now you can import satute.cli
-import satute.cli
+
 
 
 from  utils.script_analyses_utils import (
-    find_file_with_suffix_in_directory
+    find_file_with_suffix_in_directory,
+    run_external_command
 )
 
 
-def run_satute(args):
-    """
-    Runs the satute CLI with the provided arguments, ensuring the 'quiet' 
-    argument is set, and adds a small delay to ensure files are written.
+# def run_satute(args):
+#     """
+#     Runs the satute CLI with the provided arguments, ensuring the 'quiet' 
+#     argument is set, and adds a small delay to ensure files are written.
 
-    Args:
-        args (list or None): Command-line arguments to pass to satute.cli.main. If None, an empty list is used.
+#     Args:
+#         args (list or None): Command-line arguments to pass to satute.cli.main. If None, an empty list is used.
 
-    Returns:
-        bool: The result of satute.cli.main(args).
-    """
-    if args is None:
-        args = []
+#     Returns:
+#         bool: The result of satute.cli.main(args).
+#     """
+#     if args is None:
+#         args = []
 
-    if not isinstance(args, list):
-        raise TypeError("args must be a list or None")
+#     if not isinstance(args, list):
+#         raise TypeError("args must be a list or None")
 
-    # Ensure '--quiet' is in the arguments
-    if '-quiet' not in args:
-        args.append('-quiet')
+#     # Ensure '--quiet' is in the arguments
+#     if '-quiet' not in args:
+#         args.append('-quiet')
 
-    # Add a small delay to ensure files are written
-    time.sleep(2)
+#     # Add a small delay to ensure files are written
+#     time.sleep(2)
 
-    # Call the main function of satute.cli with the arguments
-    return satute.cli.main(args)
+#     # Call the main function of satute.cli with the arguments
+#     return satute.cli.main(args)
 
 
-def  run_satute_for_directory(folder_path, path_iqtree, path_python, path_satute, alpha):
+# def  run_satute_for_directory(folder_path, path_iqtree, path_python, path_satute, alpha):
 
-    print(folder_path)
+#     print(folder_path)
 
-    run_satute(
-        [
-            "-dir",
-            folder_path,
-            "-alpha",
-            alpha,
-        ]
-    )
+#     run_satute(
+#         [
+#             "-dir",
+#             folder_path,
+#             "-alpha",
+#             alpha,
+#         ]
+#     )
 
     # arguments = [
     #     path_python, 
@@ -115,6 +115,7 @@ def  run_satute_for_edge(edge_name, tree_file, folder_path, path_iqtree, alpha,m
     if not log_file:
         fasta_file_aln = find_file_with_suffix_in_directory(".fasta", folder_path)
         arguments = [
+                "satute",
                 "-iqtree",
                 path_iqtree,
                 "-msa",
@@ -128,7 +129,7 @@ def  run_satute_for_edge(edge_name, tree_file, folder_path, path_iqtree, alpha,m
                 "-edge",
                 f"{edge_name}"
         ]
-        run_satute(arguments)
+        run_external_command(arguments)
         
     else:
         print("SatuTe run is already there!")
@@ -141,7 +142,7 @@ def branch_specific_preprocessing(input_dir, edges_dict, output_dir, path_iqtree
     print("Considered edges: ", edges_dict.keys())
     print("")
 
-
+    
     # Generate the directory and complementary alignments for all genes 
     generate_edge_directories(edges_dict.keys(), input_dir, output_dir)
     print("")

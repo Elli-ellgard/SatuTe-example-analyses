@@ -6,22 +6,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../.
 
 from utils.script_analyses_utils import (
     find_file_with_suffix, 
-    find_files_with_suffix_in_directory
 )
 
 from utils.script_preprocessing_and_generating_satute_output import (
     branch_specific_preprocessing,
 )
 
-from branch_specific_sliding_window_analysis.script_sliding_window_analysis import (
-    sliding_window_analysis,
+from per_category_analysis.script_category_analysis import (
+    per_category_analysis,
 )
 
-from branch_specific_sliding_window_analysis.script_visualise_results import (
-    plot_sliding_window_analysis_combined,
-)
-
-   
+  
 
 if __name__ == "__main__":
 
@@ -48,20 +43,18 @@ if __name__ == "__main__":
     fasta_file = find_file_with_suffix(data_name, ".fasta", input_dir)
     model = "LG+G4"
     
+
     satute_output_dir = os.path.join(current_directory,"SatuTe_results", data_name)
     os.makedirs(satute_output_dir, exist_ok=True)
 
     # Preprocessing: generate directories + run SatuTe and IQ-Tree
     branch_specific_preprocessing(input_dir, edges_dict, satute_output_dir, path_iqtree, alpha, model)
 
-
     # Specify the path to output for the analysis
-    output_dir = os.path.join(current_directory,"results_sliding_window_analysis", data_name)
+    output_dir = os.path.join(current_directory,"results_per_category_analysis", data_name)
     os.makedirs(output_dir, exist_ok=True)
 
     # Using SatuTe output for the analysis
-    sliding_window_analysis(satute_output_dir, window_size=36, results_dir=output_dir)
+    per_category_analysis(input_dir, results_dir=output_dir)
 
-    csv_files = find_files_with_suffix_in_directory("sliding_window_size_36.csv", output_dir)
-    plot_sliding_window_analysis_combined(csv_files, output_dir)
-    
+   

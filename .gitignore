@@ -1,4 +1,4 @@
-results*/
+*results*/
 example/script*
 
 # Ignore __pycache__ directories

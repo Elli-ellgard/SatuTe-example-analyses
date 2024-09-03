@@ -6,22 +6,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../.
 
 from utils.script_analyses_utils import (
     find_file_with_suffix, 
-    find_files_with_suffix_in_directory
 )
 
 from utils.script_preprocessing_and_generating_satute_output import (
     branch_specific_preprocessing,
 )
 
-from branch_specific_sliding_window_analysis.script_sliding_window_analysis import (
-    sliding_window_analysis,
+from per_category_analysis.script_category_analysis import (
+    per_category_analysis,
 )
 
-from branch_specific_sliding_window_analysis.script_visualise_results import (
-    plot_sliding_window_analysis_combined,
-)
-
-   
+  
 
 if __name__ == "__main__":
 
@@ -35,33 +30,28 @@ if __name__ == "__main__":
     # Get the current working directory
     current_directory = os.path.join(os.getcwd(), "../../")
 
-
     # dictionary of considered edges
     edges_dict= {
-        "branch_to_eukaryota": "(Node2691*, Node2692*)",
-        "branch_to_yeast": "(Eukaryota_Opisthokonta_Fungi_Dikarya_Ascomycota_saccharomyceta_Saccharomycotina_Saccharomycetes_Saccharomycetales_Saccharomycetaceae_Saccharomyces_cerevisiae, Node2721*)",
+        "branch_to_eukaryota": "(Node1612*,Node77*)",
+        "branch_to_yeast": "(Eukaryota_Opisthokonta_Nucletmycea_Fungi_Dikarya_Ascomycota_Saccharomycotina_Saccharomycetes_Saccharomycetales_Saccharomyces_cerevisiae_baker_s_yeast,Node1652*)",
     }
 
     # Specify the path to your considered data 
-    data_name = "protein_based_2D_tree"
+    data_name = "rRNA_based_3D_tree"
     input_dir = os.path.join(current_directory, "data", data_name)
     fasta_file = find_file_with_suffix(data_name, ".fasta", input_dir)
-    model = "LG+G4"
+    model="GTR+G4"
     
+
     satute_output_dir = os.path.join(current_directory,"SatuTe_results", data_name)
     os.makedirs(satute_output_dir, exist_ok=True)
 
     # Preprocessing: generate directories + run SatuTe and IQ-Tree
     branch_specific_preprocessing(input_dir, edges_dict, satute_output_dir, path_iqtree, alpha, model)
 
-
     # Specify the path to output for the analysis
-    output_dir = os.path.join(current_directory,"results_sliding_window_analysis", data_name)
+    output_dir = os.path.join(current_directory,"results_per_category_analysis", data_name)
     os.makedirs(output_dir, exist_ok=True)
 
     # Using SatuTe output for the analysis
-    sliding_window_analysis(satute_output_dir, window_size=36, results_dir=output_dir)
-
-    csv_files = find_files_with_suffix_in_directory("sliding_window_size_36.csv", output_dir)
-    plot_sliding_window_analysis_combined(csv_files, output_dir)
-    
+    per_category_analysis(input_dir, results_dir=output_dir)

@@ -52,7 +52,14 @@ if __name__ == "__main__":
     os.makedirs(satute_output_dir, exist_ok=True)
 
     # Preprocessing: generate directories + run SatuTe and IQ-Tree
-    branch_specific_preprocessing(input_dir, edges_dict, satute_output_dir, path_iqtree, alpha, model)
+    branch_specific_preprocessing(
+        input_dir=input_dir, 
+        edges_dict=edges_dict, 
+        output_dir=satute_output_dir, 
+        path_iqtree=path_iqtree, 
+        alpha=alpha, 
+        model=model)
+
 
 
     # Specify the path to output for the analysis

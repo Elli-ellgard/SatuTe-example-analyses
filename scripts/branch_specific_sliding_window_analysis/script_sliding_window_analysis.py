@@ -65,7 +65,11 @@ def sliding_window_analysis(satute_input_dir, window_size, edge_list=None, resul
                     # Store the rolling centered data in the dictionary under the branch name
                     branch_results_dict[branch] = window_score_centered
                     # Also store the variance for that branch
-                    global_variance_list.append({'dataset': dataset, 'branch': branch, 'variance': variance})
+                    global_variance_list.append(
+                        {'dataset': dataset, 
+                         'branch': branch, 
+                         'global_variance': variance,
+                        })
 
         if branch_results_dict:
             # Convert the dictionary of rolling results into a DataFrame
@@ -74,7 +78,7 @@ def sliding_window_analysis(satute_input_dir, window_size, edge_list=None, resul
 
             # Save the sliding window results for the current dataset
             sliding_window_csv_path = os.path.join(results_dir, f"{dataset}_sliding_window_size_{window_size}.csv")
-            sliding_window_dict.to_csv(sliding_window_csv_path, index=False)
+            sliding_window_df.to_csv(sliding_window_csv_path, index=False)
 
     if global_variance_list:  # Check if global_variance_list is not empty
         # Convert the list of dictionaries into a DataFrame

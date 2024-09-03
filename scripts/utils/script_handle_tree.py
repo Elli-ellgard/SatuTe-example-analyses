@@ -1,8 +1,4 @@
-from Bio import Phylo
-from io import StringIO
-import pandas as pd
 from ete3 import Tree
-from collections import Counter
 from typing import Tuple, Set
 from pandas import DataFrame
 import re
